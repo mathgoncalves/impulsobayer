@@ -1,13 +1,13 @@
 from django.contrib import admin
-from blog.models import Publication
+from blog.models import NotaFiscal
 
 
 class PublicationAdmin(admin.ModelAdmin):
-    date_hierarchy = 'publication_date'
-    list_display = ('nome_da_empresa', 'descrição_do_serviço', 'valor_da_nota','publication_date')
-    list_filter = ('nome_da_empresa', 'CNPJ')
-    search_fields = ('nome_da_empresa', 'CNPJ')
+    date_hierarchy = 'data_publicacao'
+    list_display = ('empresa', 'descricao', 'valor_nota','data_publicacao')
+    list_filter = ('empresa' , 'cnpj')
+    search_fields = ('empresa' , 'cnpj')
 
 
-admin.site.register(Publication, PublicationAdmin)
+admin.site.register(NotaFiscal, PublicationAdmin)
 # Register your models here.
