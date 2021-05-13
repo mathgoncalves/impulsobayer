@@ -1,5 +1,5 @@
 from django.shortcuts import render
-from blog.models import Publication
+from blog.models import NotaFiscal
 
 
 # Create your views here.
@@ -11,18 +11,18 @@ def show_index (request):
 def show_publication_done (request):
     dados = {
 
-        'nome_da_empresa': request.POST.get ('nome_da_empresa'),
-        'descrição_do_serviço': request.POST.get('descrição_do_serviço'),
-        'CNPJ': request.POST.get('CNPJ'),
-        'número_da_nota': request.POST.get('número_da_nota'),
-        'data_e_hora_da_emissão': request.POST.get('data_e_hora_da_emissão'),
-        'valor_da_nota': request.POST.get('valor_da_nota ')
+        'empresa': request.POST.get ('empresa'),
+        'descricao': request.POST.get('descricao'),
+        'cnpj': request.POST.get('cnpj'),
+        'nota': request.POST.get('nota'),
+        'data_emissao': request.POST.get('data_emissao'),
+        'valor_nota': request.POST.get('valor_nota')
 
     }
 
     print(dados)
 
-    publicacao = Publication(**dados)
+    publicacao = NotaFiscal(**dados)
     publicacao.save()
 
-    return render(request,'publication_done.html',{'número_da_nota': publicacao.número_da_nota})
+    return render(request,'publication_done.html',{'nota': publicacao.nota})
