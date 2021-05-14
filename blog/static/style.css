@@ -233,3 +233,9 @@ body, button, input {
     padding: 0;
   }
 }
+
+logo{
+    top: 0px;
+    left: 0px;
+
+}
