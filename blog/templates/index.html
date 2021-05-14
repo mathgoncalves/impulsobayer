@@ -4,9 +4,9 @@
 <head>
     <link rel="stylesheet" href="{% static 'style.css'%}">
     <title>Programa de Pontuação Impulso Bayer</title>
-    <img class="logo" src="{% static 'impulsobayer.png'%}">
 </head>
 <body>
+<img class="logo" src="{% static 'impulsobayer.png'%}">
 <form name="publication" action="publication/done" method="post">
    {% csrf_token %}
 <div class="background">
